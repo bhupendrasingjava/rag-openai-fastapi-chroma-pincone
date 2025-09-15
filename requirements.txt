@@ -11,3 +11,5 @@ langchain-openai
 chromadb
 pinecone-client 
 langchain-pinecone
+gunicorn
+pypdf

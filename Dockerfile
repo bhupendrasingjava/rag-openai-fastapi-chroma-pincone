@@ -26,4 +26,5 @@ EXPOSE 10000
 
 # Run with Gunicorn + Uvicorn worker
 # IMPORTANT: sh -c ensures $PORT is expanded correctly
-CMD ["sh", "-c", "gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app -b 0.0.0.0:$PORT"]
+#CMD ["sh", "-c", "gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app -b 0.0.0.0:$PORT"]
+CMD ["gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "app.main:app", "-b", "0.0.0.0:10000"]
